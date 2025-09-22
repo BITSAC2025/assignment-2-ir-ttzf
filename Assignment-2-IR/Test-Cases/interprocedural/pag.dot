@@ -1,0 +1,30 @@
+digraph "SVFIR" {
+	label="SVFIR";
+
+	Node0x5c8d98618590 [shape=record,shape=box,label="{ConstNullPtrValVar ID: 0\n ptr null \{ constant data \}}"];
+	Node0x5c8d98618590 -> Node0x5c8d986251c0[color=black];
+	Node0x5c8d986251c0 [shape=record,shape=diamond,label="{DummyValVar ID: 1}"];
+	Node0x5c8d9866a210 [shape=record,shape=box,label="{[foo] FunValVar ID: 4\nfoo}"];
+	Node0x5c8d9864cf30 [shape=record,shape=box3d,label="{[foo] FunObjVar ID: 5 (base object)\nfoo}"];
+	Node0x5c8d9864cf30 -> Node0x5c8d9866a210[color=green];
+	Node0x5c8d98611570 [shape=record,shape=box,label="{[foo] RetValPN ID: 6 unique return node for function foo|{<s0>CallICFGNode: \{ \"ln\": 10, \"cl\": 7, \"fl\": \"interprocedural.c\" \}|<s1>CallICFGNode: \{ \"ln\": 11, \"cl\": 7, \"fl\": \"interprocedural.c\" \}}}"];
+	Node0x5c8d98611570:s0 -> Node0x5c8d98624ff0[color=black,style=dotted];
+	Node0x5c8d98611570:s1 -> Node0x5c8d98625ef0[color=black,style=dotted];
+	Node0x5c8d98626630 [shape=record,shape=box,label="{[foo] ArgValVar ID: 7\n i32 %p \{ 0th arg foo \"ln\": 4, \"file\": \"interprocedural.c\" \}}"];
+	Node0x5c8d98626630 -> Node0x5c8d98611570[color=grey];
+	Node0x5c8d98631480 [shape=record,shape=box,label="{[llvm.dbg.declare] FunValVar ID: 10\nllvm.dbg.declare}"];
+	Node0x5c8d98624a80 [shape=record,shape=box,label="{[main] FunValVar ID: 16\nmain}"];
+	Node0x5c8d98623cd0 [shape=record,shape=box3d,label="{[main] FunObjVar ID: 17 (base object)\nmain}"];
+	Node0x5c8d98623cd0 -> Node0x5c8d98624a80[color=green];
+	Node0x5c8d98603170 [shape=record,shape=box,label="{[main] RetValPN ID: 18 unique return node for function main}"];
+	Node0x5c8d98626ba0 [shape=record,shape=box,label="{[main] ArgValVar ID: 19\n i32 %argc \{ 0th arg main \"ln\": 7, \"file\": \"interprocedural.c\" \}|{<s0>CallICFGNode: \{ \"ln\": 11, \"cl\": 7, \"fl\": \"interprocedural.c\" \}}}"];
+	Node0x5c8d98626ba0:s0 -> Node0x5c8d98626630[color=black,style=dashed];
+	Node0x5c8d98624ff0 [shape=record,shape=box,label="{[main] ValVar ID: 21\n   %call = call i32 @foo(i32 noundef 3), !dbg !17 \{ \"ln\": 10, \"cl\": 7, \"fl\": \"interprocedural.c\" \}}"];
+	Node0x5c8d98625ef0 [shape=record,shape=box,label="{[main] ValVar ID: 25\n   %call1 = call i32 @foo(i32 noundef %argc), !dbg !19 \{ \"ln\": 11, \"cl\": 7, \"fl\": \"interprocedural.c\" \}}"];
+	Node0x5c8d98625ef0 -> Node0x5c8d986269d0[color=grey];
+	Node0x5c8d986269d0 [shape=record,shape=box,label="{[main] ValVar ID: 27\n   %cmp = icmp eq i32 %call1, %argc, !dbg !21 \{ \"ln\": 12, \"cl\": 16, \"fl\": \"interprocedural.c\" \}}"];
+	Node0x5c8d98625d20 [shape=record,shape=box,label="{[svf_assert] FunValVar ID: 29\nsvf_assert}"];
+	Node0x5c8d986295e0 [shape=record,shape=box3d,label="{[svf_assert] FunObjVar ID: 30 (base object)\nsvf_assert}"];
+	Node0x5c8d986295e0 -> Node0x5c8d98625d20[color=green];
+	Node0x5c8d98626800 [shape=record,shape=box,label="{[llvm.dbg.value] FunValVar ID: 36\nllvm.dbg.value}"];
+}
