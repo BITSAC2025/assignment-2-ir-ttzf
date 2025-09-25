@@ -15,7 +15,7 @@ jobs:
     name: Compare with Reference Answer
 
     steps:
-      # Checkout students' code
+      # Checkout student's code
       - name: Checkout Student's Code
         uses: actions/checkout@v4
 
@@ -41,7 +41,7 @@ jobs:
           chmod +x build.sh
           ./build.sh
 
-      # Compile students' code
+      # Compile student's code
       - name: Compile Student's Code
         run: |
           chmod +x build.sh
