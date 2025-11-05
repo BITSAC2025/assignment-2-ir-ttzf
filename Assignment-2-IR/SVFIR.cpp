@@ -41,9 +41,9 @@ int main(int argc, char** argv)
     CallGraph* callgraph = const_cast<CallGraph*>(pag->getCallGraph());
     ICFG* icfg = pag->getICFG();
 
-    pag->dump("pag");
-    callgraph->dump("callgraph");
-    icfg->dump("icfg");
+    pag->dump();
+    callgraph->dump();
+    icfg->dump();
     //@}
 
     return 0;
